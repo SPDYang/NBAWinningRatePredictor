@@ -75,4 +75,7 @@ class dataManager:
 		self.testX = np.array(testX)
 		self.testY = np.array(testY)
 
+		self.trainingX = (self.trainingX - self.trainingX.mean()) / self.trainingX.std()
+		self.testX = (self.testX - self.testX.mean()) / self.testX.std()
+
 		return self.trainingX, self.trainingY, self.testX, self.testY, self.features

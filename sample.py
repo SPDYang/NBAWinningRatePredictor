@@ -6,7 +6,7 @@ from Lasso import LassRegression
 if __name__ == "__main__":
 	dataset = dataManager()
 	trainingX, trainingY, testX, testY, features = dataset.handleNBAStat()
-	trail1 = LassRegression(alpha = 0.001, iterations = 1000)
+	trail1 = LassRegression(alpha = 0.0001, iterations = 1000)
 	trail1.fit(trainingX, trainingY)
 	# print(trail1.intercept)
 	# print(trail1.coefficient)
@@ -14,9 +14,11 @@ if __name__ == "__main__":
 	print(*features)
 	print("\nTARGET: W_PCT")
 	print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")	
-	print(trail1.makePrediction(testX[0]))
-	print(testY[0])
-	print(trail1.score(trainingX, trainingY))
-	print(trail1.score(testX, testY))
+	# print(trail1.makePrediction(testX[0]))
+	# print(testY[0])
+	print("The accuracy on training set: {:.5f}".format(trail1.score(trainingX, trainingY)))
+	print("The accuracy on test set: {:.5f}".format(trail1.score(testX, testY)))
+	
+	
 
 	

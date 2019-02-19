@@ -79,3 +79,4 @@ class dataManager:
 		self.testX = (self.testX - self.testX.mean()) / self.testX.std()
 
 		return self.trainingX, self.trainingY, self.testX, self.testY, self.features
+		

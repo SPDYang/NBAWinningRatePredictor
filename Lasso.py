@@ -57,7 +57,7 @@ class LassRegression:
 			newY += self.intercept
 		return newY
 
-	def score(self, X, testY):
+	def score(self, X: np.ndarray, testY: np.ndarray):
 		predictY = self.makePrediction(X)
 		sst = np.sum((testY - testY.mean()) ** 2)
 		ssr = np.sum((testY - predictY) ** 2)
